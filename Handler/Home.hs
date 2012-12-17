@@ -20,6 +20,5 @@ getHomeR = do
     posts <- runDB $ selectList [] [Desc PostTitle]
     -- We'll need the two "objects": articleWidget and enctype
     -- to construct the form (see templates/posts.hamlet).
-    (postWidget, enctype) <- generateFormPost entryForm
     defaultLayout $ do
         $(widgetFile "posts")
