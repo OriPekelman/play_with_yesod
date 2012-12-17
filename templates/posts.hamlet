@@ -1,0 +1,15 @@
+<h1> Posts
+$if null posts
+    -- Show a standard message if there is no post
+    <p> There are no posts in the blog
+$else
+    -- Show the list of posts
+    <ul>
+        $forall Entity postId post <- posts
+            <li> 
+                <a href=@{PosteR postId} > #{postTitle post}
+<hr>
+  <form method=post enctype=#{enctype}>
+    ^{postWidget}
+    <div>
+        <input type=submit value="New Post">
