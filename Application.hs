@@ -21,7 +21,8 @@ import Network.HTTP.Conduit (newManager, def)
 -- Don't forget to add new modules to your cabal file!
 import Handler.Home
 -- Our new Blog handler
-import Data.Time
+import Data.Time (UTCTime)
+import Data.Time.Format (formatTime)
 import Handler.Blog 
 
 
