@@ -69,6 +69,7 @@ library
                  , warp                          >= 1.3        && < 1.4
                  , data-default
                  , aeson
+                 , time                          >=1.4
 
 executable         foo
     if flag(library-only)
@@ -79,7 +80,8 @@ executable         foo
     build-depends:     base
                      , foo
                      , yesod-default
-
+                     , time                          >=1.4
+                     
     ghc-options:       -threaded -O2
 
 test-suite test
@@ -95,3 +97,4 @@ test-suite test
                  , yesod-core
                  , persistent
                  , persistent-sqlite
+                 , time                          >=1.4
