@@ -7,8 +7,8 @@ $else
     <ul>
         $forall Entity postId post <- posts
             <li> 
-                <a href=@{PosteR postId} > #{postTitle post}
-                <span> #{postDate post}
+                <a href=@{PostR postId} > #{postTitle post}
+    --            <span> #{postDate post}
 <hr>
   <form method=post enctype=#{enctype}>
     ^{postWidget}
