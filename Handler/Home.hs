@@ -1,12 +1,8 @@
 {-# LANGUAGE TupleSections, OverloadedStrings #-}
-module Handler.Home
-    ( getBlogR
-    , postBlogR
-    , getPostR
-    )
-where
+module Handler.Home where
+
 import Import
-import Data.Time (UTCTime)
+
 -- This is a handler function for the GET request method on the HomeR
 -- resource pattern. All of your resource patterns are defined in
 -- config/routes
@@ -16,9 +12,28 @@ import Data.Time (UTCTime)
 -- inclined, or create a single monolithic file.
 getHomeR :: Handler RepHtml
 getHomeR = do
-    -- Get the list of articles inside the database.
-    posts <- runDB $ selectList [] [Desc PostTitle]
-    -- We'll need the two "objects": articleWidget and enctype
-    -- to construct the form (see templates/posts.hamlet).
+    (formWidget, formEnctype) <- generateFormPost sampleForm
+    let submission = Nothing :: Maybe (FileInfo, Text)
+        handlerName = "getHomeR" :: Text
     defaultLayout $ do
-        $(widgetFile "posts")
+        aDomId <- lift newIdent
+        setTitle "Welcome To Yesod!"
+        $(widgetFile "homepage")
+
+postHomeR :: Handler RepHtml
+postHomeR = do
+    ((result, formWidget), formEnctype) <- runFormPost sampleForm
+    let handlerName = "postHomeR" :: Text
+        submission = case result of
+            FormSuccess res -> Just res
+            _ -> Nothing
+
+    defaultLayout $ do
+        aDomId <- lift newIdent
+        setTitle "Welcome To Yesod!"
+        $(widgetFile "homepage")
+
+sampleForm :: Form (FileInfo, Text)
+sampleForm = renderDivs $ (,)
+    <$> fileAFormReq "Choose a file"
+    <*> areq textField "What's on the file?" Nothing
