@@ -9,7 +9,7 @@ Email
     UniqueEmail email
 Post
     title   Text
-    date    UTCTime default=CURRENT_TIME
+ --    date    UTCTime default=CURRENT_TIME
     content Html 
     deriving
  -- By default this file is used in Model.hs (which is imported by Foundation.hs)
