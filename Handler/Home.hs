@@ -1,6 +1,10 @@
 {-# LANGUAGE TupleSections, OverloadedStrings #-}
-module Handler.Home where
-
+module Handler.Home
+    ( getBlogR
+    , postBlogR
+    , getPostR
+    )
+where
 import Import
 import Data.Time (UTCTime)
 -- This is a handler function for the GET request method on the HomeR
