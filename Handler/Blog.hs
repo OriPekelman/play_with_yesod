@@ -7,8 +7,7 @@ where
 
 import Import
 import Data.Monoid
-import Data.Time
-
+import Data.Time (UTCTime)
 -- to use Html into forms
 import Yesod.Form.Nic (YesodNic, nicHtmlField)
 instance YesodNic App
