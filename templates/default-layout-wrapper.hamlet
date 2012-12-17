@@ -36,17 +36,7 @@ $newline never
                 <li class="active"><a href="#">Home
                 <li><a href="#about">About
                 <li><a href="#contact">Contact
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret">
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action
-                    <li><a href="#">Another action
-                    <li><a href="#">Something else here
-                    <li class="divider">
-                    <li class="nav-header">Nav header
-                    <li><a href="#">Separated link
-                    <li><a href="#">One more separated link
-        <div class="container">
+      <div class="container">
             <header>
             <div id="main" role="main">
               ^{pageBody pc}
