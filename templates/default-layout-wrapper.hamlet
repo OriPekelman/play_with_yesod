@@ -23,7 +23,34 @@ $newline never
         <script>
           document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
     <body>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar">
+              <span class="icon-bar">
+              <span class="icon-bar">
+            <a class="brand" href="#">Project name
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home
+                <li><a href="#about">About
+                <li><a href="#contact">Contact
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret">
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action
+                    <li><a href="#">Another action
+                    <li><a href="#">Something else here
+                    <li class="divider">
+                    <li class="nav-header">Nav header
+                    <li><a href="#">Separated link
+                    <li><a href="#">One more separated link
         <div class="container">
+          <div class="hero-unit">
+            <h1>Hello, world!
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+            <p><a class="btn btn-primary btn-large">Learn more &raquo;
             <header>
             <div id="main" role="main">
               ^{pageBody pc}
