@@ -12,8 +12,8 @@ import Data.Time (UTCTime)
 import Yesod.Form.Nic (YesodNic, nicHtmlField)
 instance YesodNic App
 -- The view for the Form
-entryForm :: Form Article
-entryForm = renderDivs $ Article
+entryForm :: Form Post
+entryForm = renderDivs $ Post
     <$> areq   textField "Title" Nothing
     <*> areq   nicHtmlField "Content" Nothing
     
