@@ -1,3 +1,4 @@
+import Data.Time
 User
     ident Text
     password Text Maybe
